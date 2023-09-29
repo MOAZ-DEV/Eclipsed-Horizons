@@ -8,20 +8,19 @@ const App = () => {
   return <BrowserRouter>
 
     <Routes>
-      <Route path="/eclipseshorizons">
-
-      <Route index path="home" element={<HomePage />} />
-      <Route index path="home" element={<HomePage />} />
-
-        <Route path="/eclipseshorizons/games/">
+      
+      <Route index path="/Eclipsed-Horizons" element={<HomePage />} />
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/games">
         <Route path="matchinggame" element={<MatchingGame />} />
-
-        </Route>
-
       </Route>
-    </Routes>
+      <Route path="*" element={<HomePage />} />
 
-  </BrowserRouter>;
+
+
+  </Routes>
+
+  </BrowserRouter >;
 }
 
 export default App;

@@ -2,16 +2,45 @@ import { NavBar } from "../components/NavBar.tsx";
 import introbg from "../assets/DesignRes/introbg.png"
 import gphcx from "../assets/DesignRes/gphcx.png"
 import lnv from "../assets/DesignRes/lnv.mp4";
-import { TweenMax } from "gsap";
+import TweenMax from "gsap";
 
-TweenMax
 
 import "./styling.scss";
+import { useEffect, useRef } from "react";
 
 export const HomePage = (_props: any) => {
+    let gphcxel: gsap.TweenTarget = useRef<HTMLSpanElement>(null),
+        intro: gsap.TweenTarget = useRef<HTMLSpanElement>(null),
+        introimg: gsap.TweenTarget = useRef<HTMLSpanElement>(null),
+        app: gsap.TweenTarget = useRef<HTMLSpanElement>(null);
 
-    return <div className="HomePage">
-        <span className="gphcx">
+    useEffect(() => {
+        TweenMax.from(
+            intro, { y: 300, opacity: 0 });
+        TweenMax.to(
+            intro, 1, { y: 0, opacity: 1 });
+        TweenMax.from(
+            introimg, 1, { scale: 2 });
+        TweenMax.to(
+            introimg, 3, { scale: 1 });
+    }, [])
+    return <div className="HomePage" ref={el => app = el} onLoad={() => {
+        TweenMax.to(
+            app,
+            {
+                css: {
+                    visibility: 'visible'
+                },
+            }
+        );
+    }}>
+        <span ref={el => gphcxel = el} onLoad={() =>
+            TweenMax.to(
+                gphcxel,1,
+                {
+                    css: { opacity: 1, rotate: 30, transition: "opacity .5s ease-in" }
+                }
+            )} className="gphcx">
             <img src={gphcx} alt="moon" loading="lazy" />
         </span>
         <NavBar />
@@ -24,8 +53,8 @@ export const HomePage = (_props: any) => {
                 A Guide to Understanding <br /> and Observing</h2>
         </div>
 
-        <div className="introWrap">
-            <img src={introbg} alt="Moon eclipse" loading="lazy" />
+        <div ref={el => intro = el} className="introWrap">
+            <img ref={el => introimg = el} src={introbg} alt="Moon eclipse" loading="lazy" />
             <h6 className="BM18">
                 Have you ever seen the Moon <br /> disappear behind the Sun and <br /> wondered why?</h6>
             <h4 className="HR24">
@@ -89,10 +118,10 @@ export const HomePage = (_props: any) => {
                     </ul>
                 </div>
             </div>
-            <div>        
-            <h6 className="BM12">
+            <div>
+                <h6 className="BM12">
                     @SpaceAppChallenge Project</h6>
-                    <h6 className="BM12">
+                <h6 className="BM12">
                     Last Updated: 29 September, 2023</h6>
             </div>
         </footer>

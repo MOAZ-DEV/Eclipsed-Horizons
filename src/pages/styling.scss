@@ -8,6 +8,7 @@
     gap: 125px;
 
     position: relative;
+    visibility: hidden;
 
     max-height: fit-content;
     min-height: 100vh;
@@ -15,16 +16,20 @@
     padding: 0 calc(((100vw - 1600px) / 2));
 
     overflow: hidden;
-
+    & > * {
+        z-index: 4;
+    }
     .gphcx {
         @include sc(700px) {
-            transform: translateX(50%) translateY(-45%) scale(.75) !important;
+            transform: translateX(50%) translateY(-45%) scale(0.75) !important;
         }
         position: absolute;
-        top: 0;
         right: 0;
 
-        transform: translateX(calc(25%)) translateY(-45%) scale(1);
+        z-index: 0;
+
+        opacity: 0;
+        transform: translateX(calc(35%)) translateY(-60%) scale(1);
         mix-blend-mode: multiply;
 
         img {
@@ -38,6 +43,10 @@
         gap: 25px;
 
         text-align: center;
+
+        h2 {
+            -webkit-text-stroke: 0.25px rgba(255, 255, 255, 0.514);
+        }
     }
     .introWrap {
         @include DFR;
@@ -172,10 +181,10 @@
 
         div {
             @include DFR;
-            @include sc (700px) {
+            @include sc(700px) {
                 padding: 25px;
             }
-            @include sc (400px) {
+            @include sc(400px) {
                 padding: 25px 12px;
             }
             justify-content: space-between;
@@ -185,14 +194,14 @@
             padding: 45px;
 
             &:last-child {
-                @include sc (400px) {
+                @include sc(400px) {
                     flex-direction: column-reverse;
                     align-items: flex-start;
                 }
                 align-items: flex-end;
             }
             &:first-child {
-                @include sc (700px) {
+                @include sc(700px) {
                     flex-direction: column-reverse;
                     align-items: flex-start;
                     gap: 25px;
@@ -227,7 +236,7 @@
 
                         padding: 0;
                         video {
-                            @include sc (900px) {
+                            @include sc(900px) {
                                 max-width: 325px;
                             }
                             max-width: 475px;
