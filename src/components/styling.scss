@@ -1,0 +1,78 @@
+@import "../assets/GlobleStyling/variables&fonts.scss", "../assets/GlobleStyling/mixins&autos.scss";
+nav {
+    @include DFR;
+    @include sc(890px) {
+        display: flex;
+        padding: 35px 12px;
+        
+display: flex;
+padding: 35px 12px 0 12px;
+align-items: stretch;
+gap: 10px;
+
+        gap: 0px;
+
+        width: calc(100vw - (12px * 2));
+
+        ul {
+            justify-content: flex-end;
+            gap: 0px 0;
+
+            width: -webkit-fill-available;
+            position: unset !important;
+            left: 0% !important;
+            transform: unset !important;
+
+            li {
+                min-width: fit-content;
+            }
+        }
+    }
+    align-items: flex-start;
+    position: relative;
+
+    padding: 35px 25px 0 25px;
+    width: calc(100vw - (45px * 2));
+
+    svg {
+        min-width: 92px;
+    }
+    ul {
+        @include DFR;
+        @include sc (800px) {
+            @include DFC;
+            align-items: flex-end;
+
+            min-width: 30%;
+        }
+        align-items: flex-start;
+        gap: -10px;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        li {
+            @include DFR;
+            margin: 1px;
+
+            min-width: max-content;
+
+            a {
+                padding: 12px 24px;
+                border-radius: 200px;
+                background: black;
+                border: .5px solid rgba(255, 255, 255, 0.575);
+                color: white;
+                transition: background 0.15s ease;
+
+                cursor: pointer;
+
+                &:hover {
+                    z-index: 10;
+                    background: rgb(0, 110, 255);
+                }
+            }
+        }
+    }
+}

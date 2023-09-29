@@ -1,0 +1,101 @@
+@import "./mixins&autos.scss";
+
+* {
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+
+        height: fit-content;
+        width: fit-content;
+
+        text-decoration: none;
+        border: 0;
+        outline: 0;
+
+        list-style: none;
+
+        background: none;
+
+        font-family: sans-serif;
+}
+/*text style*/
+
+.HB64 {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 90%;
+
+        text-transform: uppercase;
+
+        @include sc(600px) {
+                font-size: 48px;
+                padding: 0 45px;
+                br {
+                        display: none;
+                }
+        }
+        @include sc(425px) {
+                font-size: 40px;
+                br {
+                        display: unset;
+                }
+        }
+        @include sc(325px) {
+                font-size: 2.25rem;
+        }
+}
+.HB36 {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 100%;
+
+        @include sc(600px) {
+                font-size: 2.75rem;
+        }
+        @include sc(400px) {
+                font-size: 2.25rem;
+        }
+}
+.HR24 {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 100%;
+}
+.HM24 {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 100%;
+}
+.BR18 {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 100%;
+}
+.BM18 {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 100%;
+}
+.BR14 {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 90%;
+}
+.BM14 {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 90%;
+}
+.BM12 {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 120%;
+
+        opacity: .75;
+}
+.BB12 {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 90%;
+}

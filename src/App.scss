@@ -1,0 +1,25 @@
+@import "./assets/GlobleStyling/mixins&autos.scss", "./assets/GlobleStyling/variables&fonts.scss";
+
+body {
+    height: 100vh;
+    width: 100vw;
+    max-height: 100vh;
+    max-width: 100vw;
+
+    overflow: hidden;
+    overflow-y: scroll;
+}
+#root {
+    @include DFC;
+    justify-content: flex-start;
+
+    height: fit-content;
+    max-height: fit-content;
+    width: 100vw;
+    max-width: 100vw;
+
+    background: #e6e6e6;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
