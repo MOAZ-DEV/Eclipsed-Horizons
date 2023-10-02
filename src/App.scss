@@ -24,3 +24,29 @@ body {
     overflow: hidden;
     overflow-y: scroll;
 }
+.gphcx {
+    @include sc(700px) {
+        transform: translateX(50%) translateY(-45%) scale(0.75) !important;
+    }
+    position: absolute;
+    right: 0;
+
+    z-index: 0;
+
+    opacity: 0;
+    transform: translateX(calc(35%)) translateY(-60%) scale(1);
+    mix-blend-mode: multiply;
+
+    img {
+        animation: rotategp 35s infinite;
+        mix-blend-mode: multiply;
+    }
+}
+@keyframes rotategp {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}

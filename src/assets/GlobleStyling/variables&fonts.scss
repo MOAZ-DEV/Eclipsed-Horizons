@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import "./mixins&autos.scss";
 
 * {
@@ -17,7 +18,8 @@
 
         background: none;
 
-        font-family: sans-serif;
+        font-family: 'JetBrains Mono', monospace;
+        color: #000;
 }
 /*text style*/
 
@@ -67,6 +69,18 @@
         font-weight: 500;
         line-height: 100%;
 }
+.HB24 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 100%;
+}
+.HB24,
+.HR24,
+.HM24 {
+        @include rsc(1200px) {
+                font-size: 28px;
+        }
+}
 .BR18 {
         font-size: 18px;
         font-weight: 400;
@@ -85,14 +99,26 @@
 .BM14 {
         font-size: 14px;
         font-weight: 500;
-        line-height: 90%;
+        line-height: 100%;
+}
+.BB14 {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 100%;
+}
+.BB14,
+.BR14,
+.BM14 {
+        @include rsc(1200px) {
+                font-size: 18px;
+        }
 }
 .BM12 {
         font-size: 12px;
         font-weight: 500;
         line-height: 120%;
 
-        opacity: .75;
+        opacity: 0.75;
 }
 .BB12 {
         font-size: 12px;

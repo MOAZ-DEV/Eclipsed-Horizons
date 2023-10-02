@@ -1,26 +1,24 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { MatchingGame } from "./games/MatchingGame/Game.tsx";
 import { HomePage } from "./pages/HomePage.tsx";
 import './App.scss'
+import { EclipseTypesPage } from "./pages/EclipseTypesPage.tsx";
+import { YouAreLost } from "./pages/YouAreLost.tsx";
+import { EclipsesThroughoutHistory } from "./pages/EclipsesThroughoutHistory.tsx";
 
 const App = () => {
 
   return <BrowserRouter>
 
     <Routes>
-      
-      <Route index path="/Eclipsed-Horizons" element={<HomePage />} />
-      <Route path="/home" element={<HomePage />} />
-      <Route path="/games">
-        <Route path="matchinggame" element={<MatchingGame />} />
-      </Route>
-      <Route path="*" element={<HomePage />} />
 
+        <Route path="/*" element={<YouAreLost />} />
+        <Route index path="home" element={<HomePage />} />
+        <Route path="eclipse_types" element={<EclipseTypesPage />} />
+        <Route path="eclipses_throughout_history" element={<EclipsesThroughoutHistory />} />
 
+    </Routes>
 
-  </Routes>
-
-  </BrowserRouter >;
+  </BrowserRouter>;
 }
 
 export default App;

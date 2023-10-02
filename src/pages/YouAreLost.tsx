@@ -1,5 +1,4 @@
 import { NavBar } from "../components/NavBar.tsx";
-import introbg from "../assets/DesignRes/introbg.png"
 import gphcx from "../assets/DesignRes/gphcx.png"
 import TweenMax from "gsap";
 
@@ -9,11 +8,11 @@ import { useEffect, useRef } from "react";
 import { Footer } from "../components/Footer.tsx";
 import { PNL } from "../components/PNL.tsx";
 
-export const HomePage = (_props: any) => {
+export const YouAreLost = (_props: any) => {
     let gphcxel: gsap.TweenTarget = useRef<HTMLSpanElement>(null),
         intro: gsap.TweenTarget = useRef<HTMLSpanElement>(null),
         introimg: gsap.TweenTarget = useRef<HTMLSpanElement>(null),
-        app: gsap.TweenTarget = useRef<HTMLSpanElement>(null);
+        etp: gsap.TweenTarget = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
         TweenMax.from(
@@ -25,9 +24,9 @@ export const HomePage = (_props: any) => {
         TweenMax.to(
             introimg, 3, { scale: 1 });
     }, [])
-    return <div className="HomePage" ref={el => app = el} onLoad={() => {
+    return <div className="EclipseTypesPage ContentPage" ref={el => etp = el} onLoad={() => {
         TweenMax.to(
-            app,
+            etp,
             {
                 css: {
                     visibility: 'visible'
@@ -37,7 +36,7 @@ export const HomePage = (_props: any) => {
     }}>
         <span ref={el => gphcxel = el} onLoad={() =>
             TweenMax.to(
-                gphcxel,1,
+                gphcxel, 1,
                 {
                     css: { opacity: 1, rotate: 30, transition: "opacity .5s ease-in" }
                 }
@@ -46,23 +45,13 @@ export const HomePage = (_props: any) => {
         </span>
         <NavBar />
 
-        <div className="heroWrap">
-            <h6 className="BR14">
-                An amazing journey supported <br /> with learning games</h6>
-            <h2 className="HB64">
-                The Eclipse Season: <br />
-                A Guide to Understanding <br /> and Observing</h2>
-        </div>
-
-        <div ref={el => intro = el} className="introWrap">
-            <img ref={el => introimg = el} src={introbg} alt="Moon eclipse" loading="lazy" />
-            <h6 className="BM18">
-                Have you ever seen the Moon <br /> disappear behind the Sun and <br /> wondered why?</h6>
-            <h4 className="HR24">
-                Well, here at Eclipsed Horizons,
-                we're going to teach you all about the amazing world of eclipses!
-                Get ready for an adventure that will take you from mythical stories to scientific fact!
-                So come along and let's dive right in to eclipse world!</h4>
+        <div className="contentWrap lostPage">
+            <div className="HB36 lost">
+                <h2 className="">We think that</h2>
+                <h2 className="">you're Lost or</h2>
+                <h2 className="">that place is no</h2>
+                <h2 className="">more exist!</h2>
+            </div>
         </div>
 
         <PNL />
@@ -71,10 +60,19 @@ export const HomePage = (_props: any) => {
 }
 
 /**
- * 
- * <h6 className="BM12">
+ 
+
+
+
+
+
+
+
+
+
+ * <p className="BM12">
                     Credits. <br />
-                    Moaaz - Mohammed - Sandy - Sara</h6>
+                    Moaaz - Mohammed - Sandy - Sara</p>
  * 
  How_to_Safely_Watch_a_Solar_Eclipse_ExonFXrnHKE_298
  * 
@@ -83,7 +81,7 @@ export const HomePage = (_props: any) => {
 <div className="paperWrap">
             <img src={exp} alt="" />
             <section>
-                <h6 className="BM14">The phenomena of an eclipse</h6>
+                <p className="BM14">The phenomena of an eclipse</p>
                 <div className="BR18">
                     <h4>
                         A solar eclipse occurs when the Moon passes directly between the Earth and the Sun,
